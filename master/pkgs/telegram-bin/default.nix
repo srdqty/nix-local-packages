@@ -1,6 +1,8 @@
 { stdenv
 , fetchurl
 , makeWrapper
+, lib
+, alsaLib
 , dbus
 , glib
 , glibc
@@ -31,11 +33,22 @@ stdenv.mkDerivation rec {
     install -D -m555 -T Telegram $out/bin/telegram
   '';
 
-  postFixup = ''
+  postFixup = let
+    libPath = lib.makeLibraryPath [
+      dbus.lib
+      glib
+      glibc
+      libxcb
+      libX11
+    ];
+  in ''
     patchelf --set-interpreter ${dynamic-linker} $out/bin/telegram
     patchelf --shrink-rpath $out/bin/telegram
-    patchelf --set-rpath ${dbus.lib}/lib:${glib}/lib:${glibc}/lib:${libxcb}/lib:${libX11}/lib $out/bin/telegram
+    patchelf --set-rpath "${libPath}" $out/bin/telegram
+
     wrapProgram $out/bin/telegram \
-      --set QT_XKB_CONFIG_ROOT "${xkeyboardconfig}/share/X11/xkb"
+      --set QT_XKB_CONFIG_ROOT "${xkeyboardconfig}/share/X11/xkb" \
+      --set QTCOMPOSE "${libX11}/share/X11/locale" \
+      --set LD_LIBRARY_PATH "${alsaLib}/lib"
   '';
 }
