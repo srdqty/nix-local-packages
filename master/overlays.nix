@@ -7,6 +7,7 @@ let
   });
 
   nonHaskellOverlay = (self: super: {
+    telegram = super.callPackage ./pkgs/telegram-bin {};
   });
 in
   [nonHaskellOverlay haskellOverlay]

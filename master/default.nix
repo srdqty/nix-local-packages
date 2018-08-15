@@ -1,6 +1,6 @@
 let
-  pkgs = import ./nixpkgs-pinned { overlays = import ./overlays.nix {}; };
+  pkgs = import ./nixpkgs-pinned { overlays = import ./overlays.nix; };
 in
   {
-    inherit (pkgs) qbittorent;
+    inherit (pkgs) qbittorrent telegram;
   }

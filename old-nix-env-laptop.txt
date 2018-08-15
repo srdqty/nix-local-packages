@@ -1,0 +1,15 @@
+arandr-0.1.9
+bind-9.11.2
+darcs-2.12.5
+evtest-1.33
+file-5.28
+fsharp-4.1.7
+ghostscript-9.22
+lxappearance-0.6.3
+sbt-1.0.3
+usbutils-008
+xbindkeys-1.8.6
+xdpyinfo-1.3.2
+xsel-unstable-2016-09-02
+xvkbd-3.7
+zoom-us-2.0.106600.0904
