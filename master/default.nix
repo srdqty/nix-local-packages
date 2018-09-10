@@ -3,6 +3,8 @@ let
 in
   {
     inherit (pkgs)
+      keybase-gui
+      kbfs
       qbittorrent
       pcsx2
       telegram;
