@@ -3,6 +3,7 @@ let
 in
   {
     inherit (pkgs)
+      dolphinEmu
       keybase-gui
       kbfs
       qbittorrent
