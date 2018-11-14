@@ -9,6 +9,7 @@ in
       dolphinEmu
       keybase-gui
       kbfs
+      mlton
       qbittorrent
       pcsx2
       spotify
