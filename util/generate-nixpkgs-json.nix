@@ -34,8 +34,11 @@ pkgs.stdenv.mkDerivation rec {
 
   shellHook = ''
     set -eu
+    mkdir -p ${out-path}/${rev}
     sha256=$(${sha256calc})
-    jq .+="{\"sha256\":\"$sha256\"}" ${json} > ${out-path}/${rev}.json
+    jq .+="{\"sha256\":\"$sha256\"}" ${json} > ${out-path}/${rev}/args.json
+    echo 'import ../../util/fetch-nixpkgs.nix { args = ./args.json; }' > \
+      ${out-path}/${rev}/default.nix
     exit
   '';
 }
