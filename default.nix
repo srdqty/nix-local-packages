@@ -19,6 +19,7 @@ in
       parcellite
       playerctl
       pnmixer
+      qbittorrent
       ripgrep
       rxvt_unicode-with-plugins
       slack
