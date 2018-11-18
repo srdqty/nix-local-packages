@@ -1,4 +1,4 @@
-{ config ? {}
+{ config ? { allowUnfree = true; }
 , overlays ? []
 , args
 }:
