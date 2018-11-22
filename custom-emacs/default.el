@@ -19,4 +19,5 @@
   :demand
   :custom
   (coq-prog-name "@coq-path@/bin/coqtop")
+  (coq-compiler "@coq-path@/bin/coqc")
   )
