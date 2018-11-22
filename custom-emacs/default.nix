@@ -15,7 +15,11 @@ in
   emacsWithPackages (pkgs: (with pkgs; [
     default-el-pkg
     use-package
-
     evil
+
+    dhall-mode
+    futhark-mode
     emacsPackages.proofgeneral
+    haskell-mode
+    nix-mode
   ]))

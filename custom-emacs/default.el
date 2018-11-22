@@ -15,8 +15,12 @@
   )
 
 (use-package proof-site
-  :demand
   :custom
   (coq-prog-name "@coq-path@/bin/coqtop")
   (coq-compiler "@coq-path@/bin/coqc")
   )
+
+(scroll-bar-mode -1)
+(tool-bar-mode -1)
+(tooltip-mode -1)
+(menu-bar-mode -1)
