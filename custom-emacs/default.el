@@ -15,7 +15,6 @@
   )
 
 (use-package proof-site
-;  :ensure proofgeneral
   :demand
   :custom
   (coq-prog-name "@coq-path@/bin/coqtop")
