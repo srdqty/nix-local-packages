@@ -4,7 +4,7 @@
   :init
   (setq evil-want-C-u-scroll t)
   :config
-  (evil-mode)
+  (evil-mode t)
   ;; unbind C-p
   (define-key evil-normal-state-map (kbd "C-p") nil)
   ;; set bindings for moving btwn windows
@@ -20,7 +20,19 @@
   (coq-compiler "@coq-path@/bin/coqc")
   )
 
+(use-package whitespace
+  :config
+  (global-whitespace-mode t)
+  :custom
+  (whitespace-style
+   '(face empty tabs lines-tail trailing whitespace-line-column))
+  )
+
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (tooltip-mode -1)
 (menu-bar-mode -1)
+
+(global-display-line-numbers-mode)
+(setq column-number-mode t)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
