@@ -23,6 +23,7 @@ in
     haskell-mode
     idris-mode
     json-mode
+    markdown-mode
     nix-mode
     yaml-mode
   ]))
