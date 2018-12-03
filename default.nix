@@ -15,6 +15,7 @@ in
       curl
       jq
       git
+      hicolor-icon-theme # needed by network manage applet?
       mlton
       mpv
       networkmanagerapplet
