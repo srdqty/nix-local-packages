@@ -1,4 +1,10 @@
-{ emacs, emacsPackages, emacsPackagesNgGen, runCommand, coq }:
+{ emacs
+, emacsPackages
+, emacsPackagesNgGen
+, runCommand
+, coq
+, xclip
+}:
 
 let
   emacsWithPackages = (emacsPackagesNgGen emacs).emacsWithPackages;
@@ -9,7 +15,8 @@ let
     mkdir -p $out/share/emacs/site-lisp
     cp ${default-el} $out/share/emacs/site-lisp/default.el
     substituteInPlace $out/share/emacs/site-lisp/default.el \
-      --subst-var-by coq-path ${coq}
+      --subst-var-by coq-path ${coq} \
+      --subst-var-by xclip-path ${xclip}
   '';
 in
   emacsWithPackages (pkgs: (with pkgs; [
@@ -25,5 +32,6 @@ in
     json-mode
     markdown-mode
     nix-mode
+    xclip
     yaml-mode
   ]))

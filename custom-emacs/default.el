@@ -19,6 +19,15 @@
    '(face empty tabs lines-tail trailing whitespace-line-column))
   )
 
+(use-package xclip
+  :ensure
+  :config
+  (xclip-mode 1)
+  :custom
+  (xclip-method 'xclip)
+  (xclip-program "@xclip-path@/bin/xclip")
+  )
+
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (tooltip-mode -1)
