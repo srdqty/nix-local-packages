@@ -21,6 +21,7 @@ in
     futhark-mode
     emacsPackages.proofgeneral
     haskell-mode
+    idris-mode
     json-mode
     nix-mode
     yaml-mode
