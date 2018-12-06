@@ -28,6 +28,7 @@ in
 
     dhall-mode
     doom-themes
+    flycheck
     futhark-mode
     emacsPackages.proofgeneral
     haskell-mode

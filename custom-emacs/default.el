@@ -11,6 +11,14 @@
   (evil-mode t)
   )
 
+(use-package flycheck
+  :ensure
+  :init
+  (global-flycheck-mode t)
+  :config
+  (set-face-attribute 'flycheck-error nil :foregroun "pink")
+  )
+
 (use-package proof-site)
 
 (use-package whitespace
