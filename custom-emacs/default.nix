@@ -1,6 +1,5 @@
-{ emacs
+{ customEmacsPackages
 , emacsPackages
-, emacsPackagesNgGen
 , runCommand
 , coq
 , xclip
@@ -8,7 +7,7 @@
 }:
 
 let
-  emacsWithPackages = (emacsPackagesNgGen emacs).emacsWithPackages;
+  emacsWithPackages = customEmacsPackages.emacsWithPackages;
 
   default-el = ./default.el;
 
@@ -20,14 +19,15 @@ let
       --subst-var-by hlint-path ${hlint} \
       --subst-var-by xclip-path ${xclip}
   '';
+
+  custom-evil-escape = customEmacsPackages.callPackage ./evil-escape {};
 in
   emacsWithPackages (pkgs: (with pkgs; [
     default-el-pkg
-    use-package
-    evil
-
     dhall-mode
     doom-themes
+    evil
+    custom-evil-escape
     futhark-mode
     emacsPackages.proofgeneral
     haskell-mode
@@ -35,6 +35,7 @@ in
     json-mode
     markdown-mode
     nix-mode
+    use-package
     xclip
     yaml-mode
   ]))

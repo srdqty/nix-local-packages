@@ -11,6 +11,11 @@
   (evil-mode t)
   )
 
+(use-package evil-escape
+  :config
+  (evil-escape-mode 1)
+  )
+
 (use-package proof-site)
 
 (use-package whitespace
