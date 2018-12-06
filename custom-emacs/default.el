@@ -1,5 +1,11 @@
 (package-initialize)
 
+(use-package doom-themes
+  :ensure
+  :config
+  (load-theme 'doom-vibrant t)
+  )
+
 (use-package evil
   :config
   (evil-mode t)
@@ -33,6 +39,17 @@
 (tooltip-mode -1)
 (menu-bar-mode -1)
 
-(global-display-line-numbers-mode)
-(setq column-number-mode t)
+;; show line and column numbers
+(global-display-line-numbers-mode) ; show line numbers to the left
+(setq column-number-mode t) ; show column number in footer
+
+;; delete trailing whitespace on save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; disable backup files
+(setq make-backup-files nil) ; stop creating backup~ files
+(setq auto-save-default nil) ; stop creating #autosave# files
+
+;; highlight matching parentheses
+(setq show-paren-delay 0)
+(show-paren-mode 1)

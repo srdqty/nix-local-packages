@@ -25,6 +25,7 @@ in
     evil
 
     dhall-mode
+    doom-themes
     futhark-mode
     emacsPackages.proofgeneral
     haskell-mode
