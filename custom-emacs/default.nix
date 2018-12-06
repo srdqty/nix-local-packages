@@ -4,6 +4,7 @@
 , runCommand
 , coq
 , xclip
+, hlint
 }:
 
 let
@@ -16,6 +17,7 @@ let
     cp ${default-el} $out/share/emacs/site-lisp/default.el
     substituteInPlace $out/share/emacs/site-lisp/default.el \
       --subst-var-by coq-path ${coq} \
+      --subst-var-by hlint-path ${hlint} \
       --subst-var-by xclip-path ${xclip}
   '';
 in

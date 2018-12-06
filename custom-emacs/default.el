@@ -11,11 +11,7 @@
   (evil-mode t)
   )
 
-(use-package proof-site
-  :custom
-  (coq-prog-name "@coq-path@/bin/coqtop")
-  (coq-compiler "@coq-path@/bin/coqc")
-  )
+(use-package proof-site)
 
 (use-package whitespace
   :config
@@ -31,7 +27,6 @@
   (xclip-mode 1)
   :custom
   (xclip-method 'xclip)
-  (xclip-program "@xclip-path@/bin/xclip")
   )
 
 (scroll-bar-mode -1)
@@ -53,3 +48,14 @@
 ;; highlight matching parentheses
 (setq show-paren-delay 0)
 (show-paren-mode 1)
+
+(let
+    ((extra-paths
+       '("@xclip-path@/bin"
+         "@coq-path@/bin"
+         "@hlint-path@/bin"
+	 )))
+  (setenv "PATH"
+	  (concat (mapconcat (lambda (x) (concat x ":")) extra-paths "")
+		  (getenv "PATH")))
+  (setq exec-path (append extra-paths exec-path)))
