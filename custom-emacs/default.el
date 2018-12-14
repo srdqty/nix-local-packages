@@ -1,5 +1,7 @@
 (package-initialize)
 
+(use-package agda2)
+
 (use-package doom-themes
   :ensure
   :config
