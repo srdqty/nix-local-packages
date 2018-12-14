@@ -26,6 +26,7 @@ in
     use-package
     evil
 
+    agda2-mode
     dhall-mode
     doom-themes
     futhark-mode
