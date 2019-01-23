@@ -36,6 +36,7 @@ in
     json-mode
     markdown-mode
     nix-mode
+    rust-mode
     xclip
     yaml-mode
   ]))
