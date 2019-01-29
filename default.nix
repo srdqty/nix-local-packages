@@ -14,6 +14,7 @@ in
       chromium
       coreutils
       curl
+      docker_compose
       jq
       git
       hicolor-icon-theme # needed by network manage applet?
