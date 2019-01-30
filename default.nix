@@ -3,9 +3,10 @@ let
 
   custom-emacs = pkgs.callPackage ./custom-emacs {};
   emc = pkgs.callPackage ./custom-emacs/emc.nix { emacs = custom-emacs; };
+  helm = pkgs.callPackage ./helm {};
 in
   {
-    inherit custom-emacs emc;
+    inherit custom-emacs emc helm;
 
     inherit (pkgs)
       alarm-clock-applet
