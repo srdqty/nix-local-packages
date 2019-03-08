@@ -9,6 +9,8 @@ in
     inherit custom-emacs emc helm;
 
     inherit (pkgs)
+      openjdk
+      pypi2nix
       alarm-clock-applet
       awscli
       binutils
@@ -44,6 +46,7 @@ in
     inherit (pkgs.haskellPackages)
       xmonad
       xmobar
+      idris
     ;
     inherit (pkgs.pythonPackages)
       livestreamer
