@@ -4,9 +4,15 @@ let
   custom-emacs = pkgs.callPackage ./custom-emacs {};
   emc = pkgs.callPackage ./custom-emacs/emc.nix { emacs = custom-emacs; };
   helm = pkgs.callPackage ./helm {};
+
+  newerpkgs = import ./nixpkgs/6b9d8a21fe3a21c23432bef91889a5c1fbc7f54e;
 in
   {
     inherit custom-emacs emc helm;
+
+    inherit (newerpkgs)
+      chromium
+      ;
 
     inherit (pkgs)
       openjdk
@@ -14,7 +20,6 @@ in
       alarm-clock-applet
       awscli
       binutils
-      chromium
       coreutils
       curl
       docker_compose
