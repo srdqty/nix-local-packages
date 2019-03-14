@@ -56,6 +56,7 @@
        '("@xclip-path@/bin"
          "@coq-path@/bin"
          "@hlint-path@/bin"
+         "@idris-path@/bin"
 	 )))
   (setenv "PATH"
 	  (concat (mapconcat (lambda (x) (concat x ":")) extra-paths "")

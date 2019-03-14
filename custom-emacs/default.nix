@@ -5,6 +5,7 @@
 , coq
 , xclip
 , hlint
+, idrisWithPackages
 }:
 
 let
@@ -18,7 +19,8 @@ let
     substituteInPlace $out/share/emacs/site-lisp/default.el \
       --subst-var-by coq-path ${coq} \
       --subst-var-by hlint-path ${hlint} \
-      --subst-var-by xclip-path ${xclip}
+      --subst-var-by xclip-path ${xclip} \
+      --subst-var-by idris-path ${idrisWithPackages}
   '';
 in
   emacsWithPackages (pkgs: (with pkgs; [

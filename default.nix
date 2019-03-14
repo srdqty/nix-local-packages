@@ -1,7 +1,15 @@
 let
   pkgs = import ./nixpkgs/44f24a1b8c46ece8e510dd45d4f5683c1813c00a;
 
-  custom-emacs = pkgs.callPackage ./custom-emacs {};
+  idris = pkgs.idrisPackages.with-packages (with pkgs.idrisPackages; [
+    prelude
+    base
+    contrib
+  ]);
+
+  custom-emacs = pkgs.callPackage ./custom-emacs {
+    idrisWithPackages = idris;
+  };
   emc = pkgs.callPackage ./custom-emacs/emc.nix { emacs = custom-emacs; };
   helm = pkgs.callPackage ./helm {};
 
