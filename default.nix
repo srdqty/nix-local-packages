@@ -13,13 +13,24 @@ let
   emc = pkgs.callPackage ./custom-emacs/emc.nix { emacs = custom-emacs; };
   helm = pkgs.callPackage ./helm {};
 
-  newerpkgs = import ./nixpkgs/6b9d8a21fe3a21c23432bef91889a5c1fbc7f54e;
+  config = {
+    allowUnfree = true;
+    allowBroken = false;
+    chromium = {
+      enableWideVine = false;
+    };
+  };
+
+  newerpkgs = import ./nixpkgs/6b9d8a21fe3a21c23432bef91889a5c1fbc7f54e {
+    inherit config;
+  };
 in
   {
     inherit custom-emacs emc helm;
 
     inherit (newerpkgs)
       chromium
+      google-chrome
       ;
 
     inherit (pkgs)

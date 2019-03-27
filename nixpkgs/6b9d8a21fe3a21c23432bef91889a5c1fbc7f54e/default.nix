@@ -1,1 +1,2 @@
-import ../../util/fetch-nixpkgs.nix { args = ./args.json; }
+{ config }:
+  import ../../util/fetch-nixpkgs.nix { inherit config; args = ./args.json; }
