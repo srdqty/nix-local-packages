@@ -2,6 +2,8 @@
 
 (use-package agda2)
 
+(use-package pollen-mode)
+
 (use-package doom-themes
   :ensure
   :config

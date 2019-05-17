@@ -38,6 +38,7 @@ in
     json-mode
     markdown-mode
     nix-mode
+    pollen-mode
     rust-mode
     xclip
     yaml-mode
