@@ -54,6 +54,7 @@ in
       playerctl
       pnmixer
       qbittorrent
+      racket
       ripgrep
       rxvt_unicode-with-plugins
       slack
