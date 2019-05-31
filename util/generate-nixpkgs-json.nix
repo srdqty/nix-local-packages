@@ -37,7 +37,7 @@ pkgs.stdenv.mkDerivation rec {
     mkdir -p ${out-path}/${rev}
     sha256=$(${sha256calc})
     jq .+="{\"sha256\":\"$sha256\"}" ${json} > ${out-path}/${rev}/args.json
-    echo '{ config }:' > ${out-path}/${rev}/default.nix
+    echo '{ config ? {} }:' > ${out-path}/${rev}/default.nix
     echo '  import ../../util/fetch-nixpkgs.nix { inherit config; args = ./args.json; }' >> \
       ${out-path}/${rev}/default.nix
     exit

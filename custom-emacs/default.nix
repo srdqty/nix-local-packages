@@ -6,6 +6,7 @@
 , xclip
 , hlint
 , idrisWithPackages
+, agdaWithPackages
 }:
 
 let
@@ -20,7 +21,8 @@ let
       --subst-var-by coq-path ${coq} \
       --subst-var-by hlint-path ${hlint} \
       --subst-var-by xclip-path ${xclip} \
-      --subst-var-by idris-path ${idrisWithPackages}
+      --subst-var-by idris-path ${idrisWithPackages} \
+      --subst-var-by agda-path ${agdaWithPackages}
   '';
 in
   emacsWithPackages (pkgs: (with pkgs; [
@@ -28,7 +30,6 @@ in
     use-package
     evil
 
-    agda2-mode
     dhall-mode
     doom-themes
     futhark-mode

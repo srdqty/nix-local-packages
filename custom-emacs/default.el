@@ -1,7 +1,5 @@
 (package-initialize)
 
-(use-package agda2)
-
 (use-package pollen-mode)
 
 (use-package doom-themes
@@ -59,6 +57,7 @@
          "@coq-path@/bin"
          "@hlint-path@/bin"
          "@idris-path@/bin"
+         "@agda-path@/bin"
 	 )))
   (setenv "PATH"
 	  (concat (mapconcat (lambda (x) (concat x ":")) extra-paths "")
@@ -66,3 +65,6 @@
   (setq exec-path (append extra-paths exec-path)))
 
 (setq-default indent-tabs-mode nil)
+
+(load-file (let ((coding-system-for-read 'utf-8))
+                (shell-command-to-string "agda-mode locate")))

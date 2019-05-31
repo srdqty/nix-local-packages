@@ -7,8 +7,14 @@ let
     contrib
   ]);
 
+  agda = (import ./agda).agdaWithPackages (pkgs: with pkgs; [
+    agda-stdlib
+    ial
+  ]);
+
   custom-emacs = pkgs.callPackage ./custom-emacs {
     idrisWithPackages = idris;
+    agdaWithPackages = agda;
   };
   emc = pkgs.callPackage ./custom-emacs/emc.nix { emacs = custom-emacs; };
   helm = pkgs.callPackage ./helm {};
