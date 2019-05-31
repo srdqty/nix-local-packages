@@ -16,7 +16,6 @@ let
     idrisWithPackages = idris;
     agdaWithPackages = agda;
   };
-  emc = pkgs.callPackage ./custom-emacs/emc.nix { emacs = custom-emacs; };
   helm = pkgs.callPackage ./helm {};
 
   config = {
@@ -32,7 +31,7 @@ let
   };
 in
   {
-    inherit custom-emacs emc helm;
+    inherit custom-emacs helm;
 
     inherit (newerpkgs)
       chromium
