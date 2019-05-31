@@ -19,6 +19,8 @@
 
 (evil-leader/set-key-for-mode 'agda2-mode
   "l" 'agda2-load
+  "n" 'agda2-compute-normalised-maybe-toplevel
+  "d" 'agda2-infer-type-maybe-toplevel
 )
 
 (evil-leader/set-key-for-mode 'idris-mode
