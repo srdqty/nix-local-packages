@@ -1,6 +1,7 @@
 { emacs
 , emacsPackages
 , emacsPackagesNgGen
+, git
 , runCommand
 , coq
 , xclip
@@ -22,13 +23,15 @@ let
       --subst-var-by hlint-path ${hlint} \
       --subst-var-by xclip-path ${xclip} \
       --subst-var-by idris-path ${idrisWithPackages} \
-      --subst-var-by agda-path ${agdaWithPackages}
+      --subst-var-by agda-path ${agdaWithPackages} \
+      --subst-var-by git ${git}
   '';
 in
   emacsWithPackages (pkgs: (with pkgs; [
     default-el-pkg
     use-package
     evil
+    evil-leader
 
     dhall-mode
     doom-themes
@@ -37,7 +40,9 @@ in
     haskell-mode
     idris-mode
     json-mode
+    magit
     markdown-mode
+    #    neotree
     nix-mode
     pollen-mode
     rust-mode

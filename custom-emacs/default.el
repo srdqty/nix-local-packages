@@ -5,8 +5,30 @@
 (use-package doom-themes
   :ensure
   :config
-  (load-theme 'doom-vibrant t)
+  (load-theme 'doom-nord-light t)
   )
+
+(global-evil-leader-mode)
+
+(evil-leader/set-leader "<SPC>")
+
+(evil-leader/set-key
+  "gb" 'magit-blame
+  "gq" 'magit-blame-quit
+)
+
+(evil-leader/set-key-for-mode 'agda2-mode
+  "l" 'agda2-load
+)
+
+(evil-leader/set-key-for-mode 'idris-mode
+  "l" 'idris-load-file
+  "c" 'idris-case-split
+  "a" 'idris-proof-search
+  "e" 'idris-make-lemma
+  "s" 'idris-add-clause
+  "t" 'idris-type-at-point
+)
 
 (use-package evil
   :config
@@ -58,6 +80,7 @@
          "@hlint-path@/bin"
          "@idris-path@/bin"
          "@agda-path@/bin"
+         "@git-path@/bin"
 	 )))
   (setenv "PATH"
 	  (concat (mapconcat (lambda (x) (concat x ":")) extra-paths "")
