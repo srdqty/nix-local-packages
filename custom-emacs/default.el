@@ -66,5 +66,3 @@
   (setq exec-path (append extra-paths exec-path)))
 
 (setq-default indent-tabs-mode nil)
-(highlight-tabs)
-(highlight-trailing-whitespace)
