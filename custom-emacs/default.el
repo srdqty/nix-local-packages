@@ -55,10 +55,10 @@
   (xclip-method 'xclip)
   )
 
-(scroll-bar-mode -1)
-(tool-bar-mode -1)
-(tooltip-mode -1)
-(menu-bar-mode -1)
+;(scroll-bar-mode -1)
+;(tool-bar-mode -1)
+;(tooltip-mode -1)
+;(menu-bar-mode -1)
 
 ;; show line and column numbers
 (global-display-line-numbers-mode) ; show line numbers to the left
