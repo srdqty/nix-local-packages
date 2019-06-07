@@ -46,6 +46,7 @@ in
     nix-mode
     pollen-mode
     rust-mode
+    solarized-theme
     xclip
     yaml-mode
   ]))

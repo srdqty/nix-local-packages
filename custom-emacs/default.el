@@ -1,12 +1,14 @@
 (package-initialize)
 
+(load-theme 'solarized-dark t)
+
 (use-package pollen-mode)
 
-(use-package doom-themes
-  :ensure
-  :config
-  (load-theme 'doom-nord-light t)
-  )
+;(use-package doom-themes
+;  :ensure
+;  :config
+;  (load-theme 'doom-nord-light t)
+;  )
 
 (global-evil-leader-mode)
 
