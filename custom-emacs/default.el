@@ -2,7 +2,9 @@
 
 (load-theme 'solarized-dark t)
 
-(use-package pollen-mode)
+; breaks proofgeneral
+; See https://github.com/ProofGeneral/PG/issues/179
+;(use-package pollen-mode)
 
 ;(use-package doom-themes
 ;  :ensure
@@ -23,6 +25,12 @@
   "l" 'agda2-load
   "n" 'agda2-compute-normalised-maybe-toplevel
   "d" 'agda2-infer-type-maybe-toplevel
+)
+
+(evil-leader/set-key-for-mode 'coq-mode
+  "<RET>" 'proof-goto-point
+  "n" 'proof-assert-next-command-interactive
+  "u" 'proof-undo-last-successful-command
 )
 
 (evil-leader/set-key-for-mode 'idris-mode
