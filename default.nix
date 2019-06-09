@@ -29,6 +29,11 @@ let
   newerpkgs = import ./nixpkgs/6b9d8a21fe3a21c23432bef91889a5c1fbc7f54e {
     inherit config;
   };
+
+  newestpkgs = import ./nixpkgs/c89b2de425db938a06a418a11f792ca1ab7ea9ff {
+    inherit config;
+  };
+
 in
   {
     inherit custom-emacs helm;
@@ -36,6 +41,10 @@ in
     inherit (newerpkgs)
       chromium
       google-chrome
+      ;
+
+    inherit (newestpkgs)
+      youtube-dl
       ;
 
     inherit (pkgs)
@@ -70,7 +79,6 @@ in
       unrar
       unzip
       xscreensaver
-      youtube-dl
       zathura
     ;
     inherit (pkgs.haskellPackages)
