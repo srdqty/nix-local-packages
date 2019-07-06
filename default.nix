@@ -34,9 +34,14 @@ let
     inherit config;
   };
 
+  convert-video-lcd = pkgs.callPackages ./convert-video-lcd {};
 in
   {
-    inherit custom-emacs helm;
+    inherit
+      convert-video-lcd
+      custom-emacs
+      helm
+      ;
 
     inherit (newerpkgs)
       chromium
