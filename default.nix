@@ -49,6 +49,8 @@ in
       ;
 
     inherit (newestpkgs)
+      maven
+      socat
       youtube-dl
       ;
 
@@ -63,7 +65,7 @@ in
       docker_compose
       jq
       git
-      hicolor-icon-theme # needed by network manage applet?
+      hicolor-icon-theme # needed by network manager applet?
       mlton
       mpv
       networkmanagerapplet
