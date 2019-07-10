@@ -50,6 +50,7 @@ in
 
     inherit (newestpkgs)
       maven
+      rustup
       socat
       youtube-dl
       ;
