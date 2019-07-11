@@ -35,12 +35,15 @@ let
   };
 
   convert-video-lcd = pkgs.callPackages ./convert-video-lcd {};
+
+  rust = import ./rust { nixpkgs = newestpkgs; };
 in
   {
     inherit
       convert-video-lcd
       custom-emacs
       helm
+      rust
       ;
 
     inherit (newerpkgs)
@@ -50,7 +53,6 @@ in
 
     inherit (newestpkgs)
       maven
-      rustup
       socat
       youtube-dl
       ;
