@@ -2,11 +2,11 @@
 
 let
   src = nixpkgs.fetchFromGitHub {
-      owner = "mozilla";
+      owner = "srdqty";
       repo = "nixpkgs-mozilla";
       # commit from: 2019-06-13
-      rev = "200cf0640fd8fdff0e1a342db98c9e31e6f13cd7";
-      sha256 = "1am353ims43ylvay263alchzy3y87r1khnwr0x2fp35qr347bvxi";
+      rev = "50778edc9398649bf77ace77124475df2c7d5bc5";
+      sha256 = "1fiqpd6k3k0b5g1l95dwix0rydhrr4ih1275gmxx1vh52my697hl";
     };
   rust = import "${src.out}/rust-overlay.nix" nixpkgs nixpkgs;
   nightly = rust.rustChannelOf { date = "2019-07-11"; channel = "nightly"; };
