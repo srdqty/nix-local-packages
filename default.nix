@@ -53,6 +53,7 @@ in
 
     inherit (pkgs-2019-07-15)
       slack
+      spotify
       ;
 
     inherit (newerpkgs)
@@ -91,7 +92,6 @@ in
       ripgrep
       rxvt_unicode-with-plugins
       smplayer # requires mpv
-      spotify
       stalonetray
       steam
       unrar
