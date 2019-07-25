@@ -37,6 +37,11 @@ let
   convert-video-lcd = pkgs.callPackages ./convert-video-lcd {};
 
   rust = import ./rust { nixpkgs = newestpkgs; };
+
+
+  pkgs-2019-07-15 = import ./nixpkgs/6b89e87a234cb8471aff2562e5381ebbbe6df156 {
+    inherit config;
+  };
 in
   {
     inherit
@@ -44,6 +49,10 @@ in
       custom-emacs
       helm
       rust
+      ;
+
+    inherit (pkgs-2019-07-15)
+      slack
       ;
 
     inherit (newerpkgs)
@@ -81,7 +90,6 @@ in
       racket
       ripgrep
       rxvt_unicode-with-plugins
-      slack
       smplayer # requires mpv
       spotify
       stalonetray
