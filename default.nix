@@ -55,6 +55,7 @@ in
       awscli
       slack
       spotify
+      telnet
       ;
 
     inherit (newerpkgs)
