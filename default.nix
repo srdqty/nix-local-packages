@@ -52,6 +52,7 @@ in
       ;
 
     inherit (pkgs-2019-07-15)
+      awscli
       slack
       spotify
       ;
@@ -71,7 +72,6 @@ in
       openjdk
       pypi2nix
       alarm-clock-applet
-      awscli
       binutils
       coreutils
       curl
