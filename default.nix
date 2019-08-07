@@ -1,23 +1,4 @@
 let
-  pkgs = import ./nixpkgs/44f24a1b8c46ece8e510dd45d4f5683c1813c00a;
-
-  idris = pkgs.idrisPackages.with-packages (with pkgs.idrisPackages; [
-    prelude
-    base
-    contrib
-  ]);
-
-  agda = (import ./agda).agdaWithPackages (pkgs: with pkgs; [
-    agda-stdlib
-    ial
-  ]);
-
-  custom-emacs = pkgs.callPackage ./custom-emacs {
-    idrisWithPackages = idris;
-    agdaWithPackages = agda;
-  };
-  helm = pkgs.callPackage ./helm {};
-
   config = {
     allowUnfree = true;
     allowBroken = false;
@@ -26,26 +7,34 @@ let
     };
   };
 
-  newerpkgs = import ./nixpkgs/6b9d8a21fe3a21c23432bef91889a5c1fbc7f54e {
-    inherit config;
-  };
+  pkgs = import ./nixpkgs/44f24a1b8c46ece8e510dd45d4f5683c1813c00a;
+  newerpkgs = import ./nixpkgs/6b9d8a21fe3a21c23432bef91889a5c1fbc7f54e { inherit config; };
+  newestpkgs = import ./nixpkgs/c89b2de425db938a06a418a11f792ca1ab7ea9ff { inherit config; };
+  pkgs-2019-07-15 = import ./nixpkgs/6b89e87a234cb8471aff2562e5381ebbbe6df156 { inherit config; };
 
-  newestpkgs = import ./nixpkgs/c89b2de425db938a06a418a11f792ca1ab7ea9ff {
-    inherit config;
-  };
-
-  convert-video-lcd = pkgs.callPackages ./convert-video-lcd {};
-
+  agda = (import ./agda).agdaWithPackages (pkgs: with pkgs; [
+    agda-stdlib
+    ial
+  ]);
+  check-instance-az = pkgs.callPackages ./scripts/check-instance-az {};
+  convert-video = pkgs.callPackages ./scripts/convert-video {};
+  helm = pkgs.callPackage ./helm {};
+  idris = pkgs.idrisPackages.with-packages (with pkgs.idrisPackages; [
+    prelude
+    base
+    contrib
+  ]);
   rust = import ./rust { nixpkgs = newestpkgs; };
 
-
-  pkgs-2019-07-15 = import ./nixpkgs/6b89e87a234cb8471aff2562e5381ebbbe6df156 {
-    inherit config;
+  custom-emacs = pkgs.callPackage ./custom-emacs {
+    idrisWithPackages = idris;
+    agdaWithPackages = agda;
   };
 in
   {
     inherit
-      convert-video-lcd
+      check-instance-az
+      convert-video
       custom-emacs
       helm
       rust
