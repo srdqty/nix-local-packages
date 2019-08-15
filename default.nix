@@ -45,6 +45,7 @@ in
       slack
       spotify
       telnet
+      wirelesstools
       ;
 
     inherit (newerpkgs)
