@@ -11,6 +11,7 @@ let
   newerpkgs = import ./nixpkgs/6b9d8a21fe3a21c23432bef91889a5c1fbc7f54e { inherit config; };
   newestpkgs = import ./nixpkgs/c89b2de425db938a06a418a11f792ca1ab7ea9ff { inherit config; };
   pkgs-2019-07-15 = import ./nixpkgs/6b89e87a234cb8471aff2562e5381ebbbe6df156 { inherit config; };
+  pkgs-2019-08-15 = import ./nixpkgs/2edd7103dab1e43a233d7fee890461887e5f6e1d { inherit config; };
 
   agda = (import ./agda).agdaWithPackages (pkgs: with pkgs; [
     agda-stdlib
@@ -40,10 +41,15 @@ in
       rust
       ;
 
-    inherit (pkgs-2019-07-15)
+    inherit (pkgs-2019-08-15)
       awscli
+      discord
+      firefox
       slack
       spotify
+      ;
+
+    inherit (pkgs-2019-07-15)
       telnet
       wirelesstools
       ;
