@@ -17,8 +17,9 @@ let
     agda-stdlib
     ial
   ]);
-  check-instance-az = pkgs.callPackages ./scripts/check-instance-az {};
-  convert-video = pkgs.callPackages ./scripts/convert-video {};
+  avro-tools = pkgs.callPackage ./avro-tools {};
+  check-instance-az = pkgs.callPackage ./scripts/check-instance-az {};
+  convert-video = pkgs.callPackage ./scripts/convert-video {};
   helm = pkgs.callPackage ./helm {};
   idris = pkgs.idrisPackages.with-packages (with pkgs.idrisPackages; [
     prelude
@@ -34,6 +35,7 @@ let
 in
   {
     inherit
+      avro-tools
       check-instance-az
       convert-video
       custom-emacs
