@@ -22,6 +22,7 @@ let
   check-instance-az = pkgs.callPackage ./scripts/check-instance-az {};
   convert-video = pkgs.callPackage ./scripts/convert-video {};
   helm = pkgs.callPackage ./helm {};
+  kubectl = pkgs.callPackage ./kubectl {};
   idris = pkgs.idrisPackages.with-packages (with pkgs.idrisPackages; [
     prelude
     base
@@ -41,6 +42,7 @@ in
       convert-video
       custom-emacs
       helm
+      kubectl
       rust
       ;
 
