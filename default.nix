@@ -49,6 +49,7 @@ in
     inherit (pkgs-2019-10-02)
       chromium
       google-chrome
+      yaml2json
       ;
 
     inherit (pkgs-2019-08-15)
