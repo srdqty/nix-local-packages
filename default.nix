@@ -51,7 +51,7 @@ in
       chromium
       google-chrome
       rustup
-      gcc-gdb-multitarget
+      gdb-multitarget
       minicom
       openocd
       bluezFull
