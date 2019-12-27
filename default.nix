@@ -50,6 +50,12 @@ in
     inherit (pkgs-2019-12-13)
       chromium
       google-chrome
+      rustup
+      gcc-gdb-multitarget
+      minicom
+      openocd
+      bluezFull
+      rfkill
       ;
 
     inherit (pkgs-2019-10-02)
