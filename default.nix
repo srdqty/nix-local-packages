@@ -52,6 +52,7 @@ in
       google-chrome
       rustup
       gcc-arm-embedded
+      gcc
       minicom
       openocd
       bluezFull
