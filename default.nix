@@ -22,6 +22,7 @@ let
   avro-tools = pkgs.callPackage ./avro-tools {};
   check-instance-az = pkgs.callPackage ./scripts/check-instance-az {};
   convert-video = pkgs.callPackage ./scripts/convert-video {};
+  mount-usbdrive = pkgs.callPackage ./scripts/mount-usbdrive {};
   helm = pkgs.callPackage ./helm {};
   kubectl = pkgs.callPackage ./kubectl {};
   idris = pkgs.idrisPackages.with-packages (with pkgs.idrisPackages; [
@@ -41,6 +42,7 @@ in
       avro-tools
       check-instance-az
       convert-video
+      mount-usbdrive
       custom-emacs
       helm
       kubectl
