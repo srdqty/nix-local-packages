@@ -59,6 +59,7 @@ in
       openocd
       bluezFull
       rfkill
+      jsonnet
       ;
 
     inherit (pkgs-2019-10-02)
