@@ -14,6 +14,7 @@ let
   pkgs-2019-08-15 = import ./nixpkgs/2edd7103dab1e43a233d7fee890461887e5f6e1d { inherit config; };
   pkgs-2019-10-02 = import nixpkgs/2436c27541b2f52deea3a4c1691216a02152e729 { inherit config; };
   pkgs-2019-12-13 = import nixpkgs/f4ad230f90ef312695adc26f256036203e9c70af { inherit config; };
+  pkgs-2020-01-13 = import nixpkgs/81101ce9d122a401142bd7cc91eb4c89cde7a526 { inherit config; };
 
   agda = (import ./agda).agdaWithPackages (pkgs: with pkgs; [
     agda-stdlib
@@ -49,9 +50,15 @@ in
       rust
       ;
 
-    inherit (pkgs-2019-12-13)
+    inherit (pkgs-2020-01-13)
       chromium
       google-chrome
+      slack
+      firefox
+      spotify
+      ;
+
+    inherit (pkgs-2019-12-13)
       rustup
       gcc-arm-embedded
       gcc
@@ -69,9 +76,6 @@ in
     inherit (pkgs-2019-08-15)
       awscli
       discord
-      firefox
-      slack
-      spotify
       ;
 
     inherit (pkgs-2019-07-15)
