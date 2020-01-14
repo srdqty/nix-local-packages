@@ -26,6 +26,7 @@ let
   mount-usbdrive = pkgs.callPackage ./scripts/mount-usbdrive {};
   helm = pkgs.callPackage ./helm {};
   kubectl = pkgs.callPackage ./kubectl {};
+  minikube = pkgs.callPackage ./minikube {};
   idris = pkgs.idrisPackages.with-packages (with pkgs.idrisPackages; [
     prelude
     base
@@ -48,6 +49,7 @@ in
       helm
       kubectl
       rust
+      minikube
       ;
 
     inherit (pkgs-2020-01-13)
