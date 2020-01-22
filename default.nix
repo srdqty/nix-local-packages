@@ -58,6 +58,7 @@ in
       slack
       firefox
       spotify
+      etcd
       ;
 
     inherit (pkgs-2019-12-13)
