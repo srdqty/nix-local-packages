@@ -59,6 +59,7 @@ in
       firefox
       spotify
       etcd
+      go_1_13
       ;
 
     inherit (pkgs-2019-12-13)
