@@ -60,6 +60,7 @@ in
       spotify
       etcd
       go_1_13
+      youtube-dl
       ;
 
     inherit (pkgs-2019-12-13)
@@ -90,7 +91,6 @@ in
     inherit (newestpkgs)
       maven
       socat
-      youtube-dl
       ;
 
     inherit (pkgs)
