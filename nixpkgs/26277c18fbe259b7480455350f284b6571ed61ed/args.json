@@ -1,0 +1,7 @@
+{
+  "url": "https://github.com/NixOS/nixpkgs/archive/26277c18fbe259b7480455350f284b6571ed61ed.tar.gz",
+  "rev": "26277c18fbe259b7480455350f284b6571ed61ed",
+  "owner": "NixOS",
+  "repo": "nixpkgs",
+  "sha256": "0ipfgl4lkqag7mvp0rg257d8ch9fdhr1zbg9x3355mpn1yasags4"
+}
