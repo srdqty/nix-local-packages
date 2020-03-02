@@ -15,7 +15,7 @@ let
   pkgs-2019-10-02 = import nixpkgs/2436c27541b2f52deea3a4c1691216a02152e729 { inherit config; };
   pkgs-2019-12-13 = import nixpkgs/f4ad230f90ef312695adc26f256036203e9c70af { inherit config; };
   pkgs-2020-01-13 = import nixpkgs/81101ce9d122a401142bd7cc91eb4c89cde7a526 { inherit config; };
-  pkgs-2020-02-25 = import nixpkgs/81101ce9d122a401142bd7cc91eb4c89cde7a526 { inherit config; };
+  pkgs-2020-02-25 = import nixpkgs/26277c18fbe259b7480455350f284b6571ed61ed { inherit config; };
 
   agda = (import ./agda).agdaWithPackages (pkgs: with pkgs; [
     agda-stdlib
@@ -54,6 +54,7 @@ in
       ;
 
     inherit (pkgs-2020-02-25)
+      alacritty
       chromium
       google-chrome
       slack
