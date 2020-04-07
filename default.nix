@@ -62,6 +62,7 @@ in
       youtube-dl
       rustup
       discord
+      shellcheck
       ;
 
     inherit (pkgs-2020-01-13)
