@@ -16,6 +16,7 @@ let
   pkgs-2019-12-13 = import nixpkgs/f4ad230f90ef312695adc26f256036203e9c70af { inherit config; };
   pkgs-2020-01-13 = import nixpkgs/81101ce9d122a401142bd7cc91eb4c89cde7a526 { inherit config; };
   pkgs-2020-02-25 = import nixpkgs/26277c18fbe259b7480455350f284b6571ed61ed { inherit config; };
+  pkgs-2020-04-06 = import nixpkgs/05f0934825c2a0750d4888c4735f9420c906b388 { inherit config; };
 
   agda = (import ./agda).agdaWithPackages (pkgs: with pkgs; [
     agda-stdlib
@@ -53,13 +54,20 @@ in
       minikube
       ;
 
-    inherit (pkgs-2020-02-25)
-      alacritty
+    inherit (pkgs-2020-04-06)
+      alarm-clock-applet
       chromium
       google-chrome
-      slack
-      spotify
+      smartmontools
+      networkmanagerapplet
       youtube-dl
+      slack
+      xscreensaver
+      ;
+
+    inherit (pkgs-2020-02-25)
+      alacritty
+      spotify
       rustup
       discord
       shellcheck
@@ -102,7 +110,6 @@ in
     inherit (pkgs)
       openjdk
       pypi2nix
-      alarm-clock-applet
       binutils
       coreutils
       curl
@@ -112,7 +119,6 @@ in
       hicolor-icon-theme # needed by network manager applet?
       mlton
       mpv
-      networkmanagerapplet
       numlockx
       p7zip
       parcellite
@@ -127,7 +133,6 @@ in
       steam
       unrar
       unzip
-      xscreensaver
       zathura
     ;
     inherit (pkgs.haskellPackages)
