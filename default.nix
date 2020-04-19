@@ -57,19 +57,22 @@ in
     inherit (pkgs-2020-04-06)
       alarm-clock-applet
       chromium
+      discord
       google-chrome
       smartmontools
       networkmanagerapplet
+      qbittorrent
       youtube-dl
       slack
       xscreensaver
+      mpv
+      smplayer # requires mpv
       ;
 
     inherit (pkgs-2020-02-25)
       alacritty
       spotify
       rustup
-      discord
       shellcheck
       ;
 
@@ -118,17 +121,14 @@ in
       git
       hicolor-icon-theme # needed by network manager applet?
       mlton
-      mpv
       numlockx
       p7zip
       parcellite
       playerctl
       pnmixer
-      qbittorrent
       racket
       ripgrep
       rxvt_unicode-with-plugins
-      smplayer # requires mpv
       stalonetray
       steam
       unrar
