@@ -56,17 +56,21 @@ in
 
     inherit (pkgs-2020-04-06)
       alarm-clock-applet
+      autorandr
       chromium
       discord
       google-chrome
       smartmontools
       networkmanagerapplet
+      obs-studio
       qbittorrent
       youtube-dl
       slack
+      tree
       xscreensaver
       mpv
       smplayer # requires mpv
+      vlc
       ;
 
     inherit (pkgs-2020-02-25)
