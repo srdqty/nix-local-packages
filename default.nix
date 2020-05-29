@@ -57,14 +57,18 @@ in
     inherit (pkgs-2020-04-06)
       alarm-clock-applet
       autorandr
+      bluez-alsa
       chromium
       discord
+      evince
       google-chrome
+      pdftk
       smartmontools
       networkmanagerapplet
       obs-studio
       qbittorrent
       youtube-dl
+      sdcc
       slack
       tree
       xscreensaver
