@@ -17,6 +17,7 @@ let
   pkgs-2020-01-13 = import nixpkgs/81101ce9d122a401142bd7cc91eb4c89cde7a526 { inherit config; };
   pkgs-2020-02-25 = import nixpkgs/26277c18fbe259b7480455350f284b6571ed61ed { inherit config; };
   pkgs-2020-04-06 = import nixpkgs/05f0934825c2a0750d4888c4735f9420c906b388 { inherit config; };
+  pkgs-2020-05-29 = import nixpkgs/af7709afc749ec8e98ba807cce8c4004f51489b9 { inherit config; };
 
   agda = (import ./agda).agdaWithPackages (pkgs: with pkgs; [
     agda-stdlib
@@ -54,20 +55,23 @@ in
       minikube
       ;
 
+    inherit (pkgs-2020-05-29)
+      chromium
+      discord
+      google-chrome
+      youtube-dl
+      ;
+
     inherit (pkgs-2020-04-06)
       alarm-clock-applet
       autorandr
       bluez-alsa
-      chromium
-      discord
       evince
-      google-chrome
       pdftk
       smartmontools
       networkmanagerapplet
       obs-studio
       qbittorrent
-      youtube-dl
       sdcc
       slack
       tree
