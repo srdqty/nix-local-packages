@@ -17,7 +17,7 @@ let
   pkgs-2020-01-13 = import nixpkgs/81101ce9d122a401142bd7cc91eb4c89cde7a526 { inherit config; };
   pkgs-2020-02-25 = import nixpkgs/26277c18fbe259b7480455350f284b6571ed61ed { inherit config; };
   pkgs-2020-04-06 = import nixpkgs/05f0934825c2a0750d4888c4735f9420c906b388 { inherit config; };
-  pkgs-2020-05-29 = import nixpkgs/af7709afc749ec8e98ba807cce8c4004f51489b9 { inherit config; };
+  pkgs-2020-07-05 = import nixpkgs/f7c7509ecd0a49a2a7402cebb89351166bb136d2 { inherit config; };
 
   agda = (import ./agda).agdaWithPackages (pkgs: with pkgs; [
     agda-stdlib
@@ -29,7 +29,6 @@ let
   mount-usbdrive = pkgs.callPackage ./scripts/mount-usbdrive {};
   helm = pkgs.callPackage ./helm {};
   kubectl = pkgs.callPackage ./kubectl {};
-  minikube = pkgs.callPackage ./minikube {};
   idris = pkgs.idrisPackages.with-packages (with pkgs.idrisPackages; [
     prelude
     base
@@ -52,11 +51,11 @@ in
       helm
       kubectl
       rust
-      minikube
       ;
 
-    inherit (pkgs-2020-05-29)
+    inherit (pkgs-2020-07-05)
       chromium
+      firefox
       discord
       google-chrome
       youtube-dl
@@ -73,7 +72,6 @@ in
       obs-studio
       qbittorrent
       sdcc
-      slack
       tree
       xscreensaver
       mpv
@@ -89,7 +87,6 @@ in
       ;
 
     inherit (pkgs-2020-01-13)
-      firefox
       etcd
       go_1_13
       ;
@@ -146,13 +143,5 @@ in
       unrar
       unzip
       zathura
-    ;
-    inherit (pkgs.haskellPackages)
-      xmonad
-      xmobar
-      idris
-    ;
-    inherit (pkgs.pythonPackages)
-      livestreamer
     ;
   }
