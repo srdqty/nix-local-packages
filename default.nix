@@ -17,7 +17,7 @@ let
   pkgs-2020-01-13 = import nixpkgs/81101ce9d122a401142bd7cc91eb4c89cde7a526 { inherit config; };
   pkgs-2020-02-25 = import nixpkgs/26277c18fbe259b7480455350f284b6571ed61ed { inherit config; };
   pkgs-2020-04-06 = import nixpkgs/05f0934825c2a0750d4888c4735f9420c906b388 { inherit config; };
-  pkgs-2020-07-05 = import nixpkgs/f7c7509ecd0a49a2a7402cebb89351166bb136d2 { inherit config; };
+  pkgs-2020-08-15 = import nixpkgs/d8e0ade97ad89cd7ea4452e41b4abcaf7e04a8b7 { inherit config; };
 
   agda = (import ./agda).agdaWithPackages (pkgs: with pkgs; [
     agda-stdlib
@@ -40,6 +40,8 @@ let
     idrisWithPackages = idris;
     agdaWithPackages = agda;
   };
+
+  aspell-en = pkgs: pkgs.aspellWithDicts (d: [d.en]);
 in
   {
     inherit
@@ -53,11 +55,15 @@ in
       rust
       ;
 
-    inherit (pkgs-2020-07-05)
+    aspell = aspell-en pkgs-2020-08-15;
+
+    inherit (pkgs-2020-08-15)
+      authy
       chromium
       firefox
       discord
       google-chrome
+      slack
       youtube-dl
       ;
 
